@@ -17,15 +17,15 @@ importers:
       '@babel/preset-typescript':
         specifier: ^7.26.0
         version: 7.26.0(@babel/core@7.26.7)
+      '@fast-check/jest':
+        specifier: ^2.0.3
+        version: 2.0.3(@jest/expect@29.7.0)(@jest/globals@29.7.0)
       '@types/jest':
         specifier: ^29.5.14
         version: 29.5.14
       babel-jest:
         specifier: ^29.7.0
         version: 29.7.0(@babel/core@7.26.7)
-      fast-check:
-        specifier: ^3.23.2
-        version: 3.23.2
       jest:
         specifier: ^29.7.0
         version: 29.7.0(@types/node@22.13.1)(ts-node@10.9.2(@types/node@22.13.1)(typescript@5.7.3))
@@ -636,6 +636,18 @@ packages:
   '@cspotcode/source-map-support@0.8.1':
     resolution: {integrity: sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw==}
     engines: {node: '>=12'}
+
+  '@fast-check/jest@2.0.3':
+    resolution: {integrity: sha512-3bRtz5kmM2GyLSm9qkDEepeulPaMWZMjjXhOl1G6TCuIghDCPN75pKi2FjXVhkRjTZc6TlMjrcX4f0rTGwM2bQ==}
+    peerDependencies:
+      '@fast-check/worker': '>=0.0.7 <0.5.0'
+      '@jest/expect': '>=28.0.0'
+      '@jest/globals': '>=25.5.2'
+    peerDependenciesMeta:
+      '@fast-check/worker':
+        optional: true
+      '@jest/expect':
+        optional: true
 
   '@istanbuljs/load-nyc-config@1.1.0':
     resolution: {integrity: sha512-VjeHSlIzpv/NyD3N0YuHfXOPDIixcA1q2ZV98wsMqcYlPmv2n3Yb2lYP9XMElnaFVXg5A7YLTeLu6V84uQDjmQ==}
@@ -2699,6 +2711,13 @@ snapshots:
   '@cspotcode/source-map-support@0.8.1':
     dependencies:
       '@jridgewell/trace-mapping': 0.3.9
+
+  '@fast-check/jest@2.0.3(@jest/expect@29.7.0)(@jest/globals@29.7.0)':
+    dependencies:
+      '@jest/globals': 29.7.0
+      fast-check: 3.23.2
+    optionalDependencies:
+      '@jest/expect': 29.7.0
 
   '@istanbuljs/load-nyc-config@1.1.0':
     dependencies:
